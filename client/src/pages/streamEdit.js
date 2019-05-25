@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class indexPage extends Component {
+export default class streamEdit extends Component {
   render() {
     return (
       <div>
-        Stream List
+        Edit Stream
       </div>
     )
   }
