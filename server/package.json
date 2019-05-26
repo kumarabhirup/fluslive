@@ -1,0 +1,15 @@
+{
+  "name": "fluslive-server",
+  "version": "0.0.1",
+  "description": "Server that empowers the fluslive website",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "json-server -p 4000 -w src/db.json",
+    "test": "echo \"No tests written\""
+  },
+  "author": "Kumar Abhirup",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  }
+}
