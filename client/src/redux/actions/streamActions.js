@@ -1,5 +1,6 @@
 import { CREATE_STREAM, EDIT_STREAM, DELETE_STREAM, FETCH_STREAMS, FETCH_STREAM } from './types'
 import streamApi from './apis/stream'
+import history from '../../lib/historyObject'
 
 export const fetchStreams = () => async dispatch => {
   const response = await streamApi.get(`/streams`)
@@ -24,6 +25,7 @@ export const createStream = formValues => async (dispatch, getState) => {
     type: CREATE_STREAM,
     payload: response.data
   })
+  history.push('/')
 }
 
 export const editStream = (streamId, formValues) => async dispatch => {
