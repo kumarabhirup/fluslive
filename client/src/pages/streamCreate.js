@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 
 import Button from '../components/Button'
+import streamValidate from './../lib/streamValidate'
 import { createStream } from '../redux/actions/streamActions'
 
 class streamCreate extends Component {
@@ -34,21 +35,9 @@ class streamCreate extends Component {
   }
 }
 
-const validate = ({ title, description }) => {
-  const errors = {}
-
-  if (!title) errors.title = 'You must enter a title.'
-  else if (title.length < 5) errors.title = 'Write a bigger title.'
-
-  if (!description) errors.description = 'You must enter a description.'
-  else if (description.length < 15) errors.description = 'Write a longer description.'
-
-  return errors
-}
-
 const componentWrappedInForm = reduxForm({
   form: 'streamCreate',
-  validate
+  validate: streamValidate
 })(streamCreate)
 
 export default connect(null, {

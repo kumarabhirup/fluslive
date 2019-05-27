@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { signIn, signOut } from '../redux/actions/authActions'
+import { Spinner } from './Loading'
 import Button from './Button'
 
 class GoogleAuth extends Component {
@@ -32,7 +33,7 @@ class GoogleAuth extends Component {
   }
 
   renderAuthButton = () => (
-    this.props.isSignedIn === null ? <img src="https://loading.io/spinners/rolling/lg.curve-bars-loading-indicator.gif" alt="Loading" style={{width: "15px"}} />
+    this.props.isSignedIn === null ? <Spinner />
     : this.props.isSignedIn ? (
       <Button 
         icon="google" 
