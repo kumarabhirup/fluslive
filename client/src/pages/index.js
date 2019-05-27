@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchStreams } from '../redux/actions/streamActions'
+import Button from '../components/Button';
 
 class indexPage extends Component {
   componentDidMount() {
@@ -12,13 +13,27 @@ class indexPage extends Component {
     return this.props.streams.map(stream => {
       return (
         <div className="item" key={stream.id} style={{padding: '10px 0px'}}>
+
+          { this.props.currentUserId === stream.userId && (
+            <div class="right floated content">
+              <Button icon="pencil" color="primary">
+                Edit
+              </Button>
+              <Button icon="trash" color="negative">
+                Delete
+              </Button>
+            </div>
+          ) }
+
           <i className="large middle aligned icon camera"></i>
+          
           <div className="content">
             <h3>{ stream.title }</h3>
             <div className="description">
               { stream.description }
             </div>
           </div>
+
         </div>
       )
     })
@@ -38,7 +53,8 @@ class indexPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    streams: Object.values(state.streams) // Convert object `{1: {}, 2: {}}` into an array like `[{}, {}]` so...
+    streams: Object.values(state.streams), // Convert object `{1: {}, 2: {}}` into an array like `[{}, {}]` so...
+    currentUserId: state.auth.userId
   }
 }
 
