@@ -28,12 +28,14 @@ export const createStream = formValues => async (dispatch, getState) => {
   history.push('/')
 }
 
-export const editStream = (streamId, formValues) => async dispatch => {
-  const response = await streamApi.put(`/streams/${streamId}`, formValues)
+export const editStream = (streamId, formValues) => async (dispatch, getState) => {
+  const { userId } = getState().auth
+  const response = await streamApi.put(`/streams/${streamId}`, { ...formValues, userId })
   dispatch({
     type: EDIT_STREAM,
     payload: response.data
   })
+  history.push('/')
 }
 
 export const deleteStream = streamId => async dispatch => {

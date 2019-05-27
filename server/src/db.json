@@ -1,22 +1,16 @@
 {
   "streams": [
     {
-      "title": "Building a 24 hour startup",
-      "description": "I am building what I love. Come watch me!",
-      "userId": "116970733730492134690",
-      "id": 1
-    },
-    {
-      "title": "Here I show you a surprise",
-      "description": "Nice description not needed",
-      "userId": "116970733730492134690",
-      "id": 2
-    },
-    {
-      "title": "New stream",
-      "description": "Are you excited???",
+      "title": "OLD stream",
+      "description": "NOT you excited???",
       "userId": "116970733730492134690",
       "id": 3
+    },
+    {
+      "title": "This is my stream",
+      "description": "This is my stream",
+      "userId": "116970733730492134690",
+      "id": 4
     }
   ]
 }
