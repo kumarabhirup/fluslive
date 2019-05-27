@@ -16,7 +16,7 @@ class indexPage extends Component {
         <div className="item" key={stream.id} style={{padding: '10px 0px'}}>
 
           { this.props.currentUserId === stream.userId && (
-            <div class="right floated content">
+            <div className="right floated content">
               <Button icon="pencil" color="primary">
                 Edit
               </Button>

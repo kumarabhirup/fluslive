@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { Router as BrowserRouter } from 'react-router-dom'
 
+import history from '../lib/historyObject'
 import Header from './Header'
 import Router from './Router'
 
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <div className="ui container">
           <Header />
           <Router />
