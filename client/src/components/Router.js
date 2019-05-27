@@ -14,9 +14,9 @@ export default class Router extends Component {
       <Switch>
         <Route path="/" exact component={indexPage} />
         <Route path="/streams/new" exact component={streamCreate} />
-        <Route path="/streams/edit" exact component={streamEdit} />
-        <Route path="/streams/delete" exact component={streamDelete} />
-        <Route path="/streams/show" exact component={streamShow} />
+        <Route path="/streams/edit/:id" exact component={streamEdit} />
+        <Route path="/streams/delete/:id" exact component={streamDelete} />
+        <Route path="/streams/show/:id" exact component={streamShow} />
         <Route component={failedPage} />
       </Switch>
     )

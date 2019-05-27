@@ -17,12 +17,8 @@ class indexPage extends Component {
 
           { this.props.currentUserId === stream.userId && (
             <div className="right floated content">
-              <Button icon="pencil" color="primary">
-                Edit
-              </Button>
-              <Button icon="trash" color="negative">
-                Delete
-              </Button>
+              <Link to={`/streams/edit/${stream.id}`}><Button icon="pencil" color="primary">Edit</Button></Link>
+              <Link to={`/streams/delete/${stream.id}`}><Button icon="trash" color="negative">Delete</Button></Link>
             </div>
           ) }
 
