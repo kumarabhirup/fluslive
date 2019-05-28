@@ -21,6 +21,10 @@ class streamShow extends Component {
     this.buildPlayer() // Build the player after the stream is fetched.
   }
 
+  componentWillUnmount() {
+    this.player.destroy()
+  }
+
   buildPlayer = () => {
     if (this.player || !this.props.stream) {
       return
