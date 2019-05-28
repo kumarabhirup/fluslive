@@ -9,10 +9,34 @@ class streamShow extends Component {
   constructor(props) {
     super(props)
     this.videoRef = createRef()
+    this.STREAM_NAME = this.props.match.params.id
   }
 
   componentDidMount() {
     this.props.fetchStream(this.props.match.params.id)
+    this.buildPlayer()
+  }
+
+  componentDidUpdate() {
+    this.buildPlayer() // Build the player after the stream is fetched.
+  }
+
+  buildPlayer = () => {
+    if (this.player || !this.props.stream) {
+      return
+    }
+
+    /**
+     * Origin: https://github.com/illuspas/Node-Media-Server
+     */
+    this.player = flv.createPlayer({
+      type: 'flv',
+      url: `${process.env.REACT_RTMP_SERVER_ENDPOINT}/live/${this.STREAM_NAME}.flv`
+    })
+
+    this.player.attachMediaElement(this.videoRef.current)
+
+    this.player.load()
   }
 
   render() {
