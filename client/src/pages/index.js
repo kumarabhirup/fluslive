@@ -25,7 +25,7 @@ class indexPage extends Component {
           <i className="large middle aligned icon camera"></i>
 
           <div className="content">
-            <h3>{ stream.title }</h3>
+            <h3><Link to={`/streams/show/${stream.id}`}>{ stream.title }</Link></h3>
             <div className="description">
               { stream.description }
             </div>
