@@ -1,22 +1,10 @@
 {
   "streams": [
     {
-      "title": "OLD stream",
-      "description": "NOT you excited???",
+      "title": "New stream",
+      "description": "I love streaming live... Do you?",
       "userId": "116970733730492134690",
-      "id": 3
-    },
-    {
-      "title": "This is my stream",
-      "description": "This is my stream",
-      "userId": "116970733730492134690",
-      "id": 4
-    },
-    {
-      "title": "FUCK MY STREA",
-      "description": "FUCKEDFUCKEDFUCKEDFU",
-      "userId": "116970733730492134690",
-      "id": 5
+      "id": 1
     }
   ]
 }
