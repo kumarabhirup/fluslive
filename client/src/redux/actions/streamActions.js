@@ -1,6 +1,7 @@
 import { CREATE_STREAM, EDIT_STREAM, DELETE_STREAM, FETCH_STREAMS, FETCH_STREAM } from './types'
 import streamApi from './apis/stream'
 import history from '../../lib/historyObject'
+import generateToken from '../../lib/generateToken'
 
 export const fetchStreams = () => async dispatch => {
   const response = await streamApi.get(`/streams`)
@@ -20,7 +21,7 @@ export const fetchStream = streamId => async dispatch => {
 
 export const createStream = formValues => async (dispatch, getState) => {
   const { userId } = getState().auth
-  const response = await streamApi.post('/streams', { ...formValues, userId })
+  const response = await streamApi.post('/streams', { ...formValues, userId, token: generateToken(60) })
   dispatch({
     type: CREATE_STREAM,
     payload: response.data

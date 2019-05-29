@@ -35,7 +35,7 @@ class streamShow extends Component {
      */
     this.player = flv.createPlayer({
       type: 'flv',
-      url: `${process.env.REACT_APP_RTMP_SERVER_ENDPOINT}/live/${this.STREAM_NAME}.flv`
+      url: `${process.env.REACT_APP_RTMP_SERVER_ENDPOINT}/live/${this.props.stream.token || this.STREAM_NAME}.flv`
     })
 
     this.player.attachMediaElement(this.videoRef.current)
