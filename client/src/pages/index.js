@@ -12,11 +12,14 @@ class indexPage extends Component {
   }
 
   renderList() {
-    return this.props.streams.map(stream => {
-      return (
-        <StreamRow stream={stream} currentUserId={this.props.currentUserId} />
-      )
-    })
+    if (this.props.streams.length > 0)
+      return this.props.streams.map(stream => {
+        return (
+          <StreamRow stream={stream} currentUserId={this.props.currentUserId} />
+        )
+      })
+    else
+      return <center>No streams created. Sign in to create one!</center>
   }
 
   render() {

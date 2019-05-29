@@ -15,12 +15,12 @@ export default class StreamRow extends Component {
         { currentUserId === stream.userId && (
           <div className="right floated content">
 
-            <Link to={`/streams/edit/${stream.id}`}><Button icon="pencil" color="primary">Edit</Button></Link>
-            <Link to={`/streams/delete/${stream.id}`}><Button icon="trash" color="negative">Delete</Button></Link>
-
             <CopyToClipboard text={stream.token} onCopy={() => this.setState({ copied: true })}>
               <Button icon={this.state.copied ? 'terminal' : 'info'} color={this.state.copied ? 'green' : 'primary'}>{this.state.copied ? 'Copied' : 'Copy Stream key'}</Button>
             </CopyToClipboard>
+
+            <Link to={`/streams/edit/${stream.id}`}><Button icon="pencil" color="primary">Edit</Button></Link>
+            <Link to={`/streams/delete/${stream.id}`}><Button icon="trash" color="negative">Delete</Button></Link>
 
           </div>
         ) }

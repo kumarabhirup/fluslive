@@ -17,6 +17,7 @@ export default class instructionsPage extends Component {
         <ul style={{listStyleType: 'none'}}>
           <li>To stream, you'll need <a href="https://obsproject.com/" target="_blank" rel="noopener noreferrer">OBS</a> or any other similar streaming software.</li>
           <li>To stream on FlusLive servers, you'll need a "<code>Stream URL</code>" and a "<code>Streaming key</code>".</li>
+          <li>Share your Stream on Social Media</li>
         </ul>
 
         <br />
