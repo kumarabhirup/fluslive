@@ -1,18 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "This is the title",
-      "description": "Descriptino is longer....",
-      "userId": "116970733730492134690",
-      "token": "6RTFMPegviVL2FjdoLDKJnhR21mu6KJcq0ySdepTL6QjOtsgTN9LDIvCWfJz",
-      "id": 1
-    },
-    {
-      "title": "fuckfuck",
-      "description": "fuckfuckfuckfuckfuckfuckfuck",
-      "userId": "116970733730492134690",
-      "token": "8MzSgKEX4zpP79vHM31srUa89WybJxN2M1DWVG0CInc0w09zW9fKtNGlIIHM",
-      "id": 2
-    }
-  ]
+  "streams": []
 }
