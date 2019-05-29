@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import { fetchStreams } from '../redux/actions/streamActions'
 import Button from '../components/Button'
+import StreamRow from '../components/StreamRow';
 
 class indexPage extends Component {
   componentDidMount() {
@@ -13,25 +14,7 @@ class indexPage extends Component {
   renderList() {
     return this.props.streams.map(stream => {
       return (
-        <div className="item" key={stream.id} style={{padding: '10px 0px'}}>
-
-          { this.props.currentUserId === stream.userId && (
-            <div className="right floated content">
-              <Link to={`/streams/edit/${stream.id}`}><Button icon="pencil" color="primary">Edit</Button></Link>
-              <Link to={`/streams/delete/${stream.id}`}><Button icon="trash" color="negative">Delete</Button></Link>
-            </div>
-          ) }
-
-          <i className="large middle aligned icon camera"></i>
-
-          <div className="content">
-            <h3><Link to={`/streams/show/${stream.id}`}>{ stream.title }</Link></h3>
-            <div className="description">
-              { stream.description }
-            </div>
-          </div>
-
-        </div>
+        <StreamRow stream={stream} currentUserId={this.props.currentUserId} />
       )
     })
   }
