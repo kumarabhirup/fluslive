@@ -9,6 +9,7 @@ export default function Header() {
       <Link to="/" className="item"><h4>FlusLive</h4>&nbsp;&nbsp;The quickest way to stream!</Link>
       <div className="right menu">
         <Link to="/" className="item">All streams</Link>
+        <Link to="/instructions" className="item">How to use</Link>
         <GoogleAuth />
       </div>
     </div>
