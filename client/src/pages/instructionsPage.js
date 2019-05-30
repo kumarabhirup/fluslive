@@ -24,7 +24,7 @@ export default class instructionsPage extends Component {
 
         <h2>Credentials 🔐</h2>
         <ul style={{listStyleType: 'none'}}>
-          <li><b>Stream URL</b>: "<code>rtmp://localhost/live</code>"</li>
+          <li><b>Stream URL</b>: "<code>rtmp://fluslivertmp.now.sh/live</code>"</li>
           <li><b>Stream Key</b>: Visit homepage, see your stream listed, and click "<code>Copy Streaming Key</code>" button to get the key.</li>
         </ul>
 
